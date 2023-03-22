@@ -49,7 +49,7 @@ public class PercentFrameLayout extends FrameLayout {
 
     public static class LayoutParams extends FrameLayout.LayoutParams
             implements PercentLayoutHelper.PercentLayoutParams {
-        private PercentLayoutHelper.PercentLayoutInfo mPercentLayoutInfo;
+        PercentLayoutHelper.PercentLayoutInfo mPercentLayoutInfo;
 
         public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
@@ -58,6 +58,11 @@ public class PercentFrameLayout extends FrameLayout {
 
         public LayoutParams(int width, int height) {
             super(width, height);
+        }
+
+        public LayoutParams(int width, int height, PercentLayoutHelper.PercentLayoutInfo percentLayoutInfo) {
+            super(width, height);
+            mPercentLayoutInfo = percentLayoutInfo;
         }
 
         public LayoutParams(int width, int height, int gravity) {
